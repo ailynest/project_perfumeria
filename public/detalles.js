@@ -98,15 +98,15 @@ function mostrarDetallesProducto(producto) {
             <div class="acciones">
                 <button class="button-common" class="paperbag">
                     <div>30 ML</div>
-                    <div><span class="price">95,97&nbsp;€</span> / 100 ML</div>
+                    <div><span class="price">95,97&nbsp;€ / 100 ML</span></div>
                 </button>
                 <button class="button-common" class="paperbag">
                     <div>60 ML</div>
-                    <div><span class="price">74,92&nbsp;€</span> / 100 ML</div>
+                    <div><span class="price">74,92&nbsp;€ / 100 ML</span></div>
                 </button>
                 <button class="button-common" class="paperbag">
                     <div>100 ML</div>
-                    <div><span class="price">58,89&nbsp;€</span> / 100 ML</div>
+                    <div><span class="price">58,89&nbsp;€ / 100 ML</span></div>
                 </button>
             </div>
 
@@ -126,7 +126,7 @@ function mostrarDetallesProducto(producto) {
 
 
 
-            <!-- 📌 Descripción del libro -->
+            <!-- 📌 Descripción del perfume -->
             <div class="book-description">
                 <h3><u>Descripción</u></h3>
                 <p>${producto.descripcion}</p>

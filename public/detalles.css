@@ -70,6 +70,7 @@
 .button-common {
   display: flex;
   align-items: center; /* Alinea el contenido verticalmente */
+  flex-direction: column;
   justify-content: center; /* Centra el contenido horizontalmente */
   padding: 10px 15px; /* Añadir algo de espacio al botón */
   border: none; /* Elimina el borde predeterminado */

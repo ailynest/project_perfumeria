@@ -1,0 +1,46 @@
+[
+    {
+        "id": "1",
+        "tipo": "perfume",
+        "categoria": "mujer",
+        "title": "212 Women EDT",
+        "imagen": "https://cdn2.primor.eu/media/catalog/product/cache/8d3aba296f7a18b5251ee30fa5db42b2/3/0/30F00039_2_fef8.jpg",
+        "autor": "Carolina Herrera",
+        "reviews": 5,
+        "descripcion": "212 Women EDT es un perfume Carolina Herrera que encarna la energía juvenil de Manhattan, la ciudad que nunca duerme. Este perfume Carolina Herrera es una expresión de confianza y libertad, inspirada en las creativas del mañana. Se trata de una fragancia femenina, elegante y altamente vanguardista que se sumerge en un mundo de notas atemporales, vibrantes y dinámicas. El resultado es un perfume Carolina Herrera verdaderamente inolvidable, creado por el perfumista Alberto Morillas, que deja una huella perdurable allá donde va. Carolina Herrera ha logrado con 212 Women EDT una combinación perfecta de estilo y sofisticación, creando una fragancia que resalta la personalidad segura de la mujer moderna. Si buscas un perfume Carolina Herrera que represente la energía de la Gran Manzana y que al mismo tiempo sea una declaración de confianza y libertad, 212 Women EDT es la elección ideal.",
+        "precio": "34.5",
+        "novedad": true,
+        "bestSeller": false,
+        "recomendado": false
+    },
+    {
+        "id": "1",
+        "tipo": "perfume",
+        "categoria": "mujer",
+        "title": "Good Girl",
+        "imagen": "https://cdn2.primor.eu/media/catalog/product/cache/8d3aba296f7a18b5251ee30fa5db42b2/8/4/8411061041673_2_12e9.png",
+        "autor": "Carolina Herrera",
+        "reviews": 5,
+        "descripcion": "Good Girl  EDP es un perfume Carolina Herrera que encarna la energía juvenil de Manhattan, la ciudad que nunca duerme. Este perfume Carolina Herrera es una expresión de confianza y libertad, inspirada en las creativas del mañana. Se trata de una fragancia femenina, elegante y altamente vanguardista que se sumerge en un mundo de notas atemporales, vibrantes y dinámicas. El resultado es un perfume Carolina Herrera verdaderamente inolvidable, creado por el perfumista Alberto Morillas, que deja una huella perdurable allá donde va. Carolina Herrera ha logrado con 212 Women EDT una combinación perfecta de estilo y sofisticación, creando una fragancia que resalta la personalidad segura de la mujer moderna. Si buscas un perfume Carolina Herrera que represente la energía de la Gran Manzana y que al mismo tiempo sea una declaración de confianza y libertad, 212 Women EDT es la elección ideal.",
+        "precio": "45.8",
+        "novedad": true,
+        "bestSeller": false,
+        "recomendado": false
+    },
+    {
+        "id": "1",
+        "tipo": "perfume",
+        "categoria": "mujer",
+        "title": "Paco Rabanne Homme",
+        "imagen": "https://cdn2.primor.eu/media/catalog/product/cache/8d3aba296f7a18b5251ee30fa5db42b2/4/A/4AM00040_1_21f7.jpg",
+        "autor": "Rabanne",
+        "reviews": 5,
+        "descripcion": "Paco Rabanne Homme",
+        "precio": "54.2",
+        "novedad": true,
+        "bestSeller": false,
+        "recomendado": false
+    }
+    
+    
+]

@@ -1,0 +1,160 @@
+/*Ailyn Estevez ☺*/
+@keyframes cambioColor{
+    0% {background-color: yellow;}
+    25% {background-color: green;}
+    50% {background-color: pink;}
+    75%{background-color: orange;}
+    100%{background-color: black;}
+}
+
+body{
+    background-color: black;
+    background-image: url(https://i.pinimg.com/736x/ad/12/59/ad1259839310d37c424ba1ff2a7c3f71--perfume-bottle-tattoo-old-perfume-bottles.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: cambioColor 10s infinite;
+}
+h1{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    align-self: center;
+}
+.logo{
+    max-width: 3rem; 
+    max-height: 3rem;
+    margin-bottom: 30px;
+    align-self: center;
+}
+.registro{
+    background-color: white;
+    margin: 50px;
+    padding: 50px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.login{
+    background-color: white;
+    margin: 50px;
+    padding: 50px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+button{
+    background-color: black;
+    color:white;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 10px;
+}
+div{
+    width: 100%;
+    font-size: 15px;
+}
+input[type="text"], [type="date"], [type="password"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}   
+
+
+input[type="text"]:focus,
+select:focus{
+    background-color: whitesmoke;
+}
+
+.file-input-container{
+    position: relative;
+}
+.file-input-container .tooltip{
+    display: none;
+    position: absolute;
+    top: -0px;
+    left: 0;
+    background-color: #333;
+    color:white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+}
+.file-input-container:hover .tooltip{
+    display:block;
+}
+
+
+select#genero {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} 
+
+
+/*style ojo*/
+.password-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.password-field input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px; /* Espacio extra para el ícono */
+}
+
+.password-field i {
+    position: absolute;
+    right: -30px; /* Posiciona el ícono del ojo en la esquina derecha */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+}
+
+.password-field i:hover {
+    color: #333;
+}
+
+/*mensajes*/
+#mensajes-error p {
+    margin: 5px 0;
+}
+
+#mensaje-exito {
+    color: green;
+    font-size: 16px;
+    margin-top: 20px;
+    font-weight: bold;
+    display: none; /* Asegúrate de que esté oculto inicialmente */
+}
+
+#mensaje-exito p {
+    margin: 0;
+}
+
+body{
+    background-color: white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.cute-image{
+    width: 50%;
+    height: auto;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+}

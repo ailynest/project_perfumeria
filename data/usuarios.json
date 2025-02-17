@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1738328933131,
+    "nombre": "Ailyn",
+    "apellido": "Estevez",
+    "usuario": "aestevez",
+    "email": "anate@gmail.com",
+    "pass": "Contraseña*",
+    "photo": "/uploads/1738328933122-435118995.png"
+  },
+  {
+    "id": 1739734825959,
+    "nombre": "Raydel",
+    "apellido": "Perez",
+    "usuario": "rperez",
+    "email": "ray@gmail.com",
+    "pass": "Colador*",
+    "hashedPass": "$2b$10$Ft1OeeunOZLGpJEdcJSy/.JVRmQq1mStIh6ul5c3k.pL0zVolEawK",
+    "photo": "/uploads/1739734825414-328255783.png"
+  },
+  {
+    "id": 1739735071510,
+    "nombre": "Mami",
+    "apellido": "Querida",
+    "usuario": "teamo",
+    "email": "tequiero@gmail.com",
+    "pass": "Holatodo*",
+    "hashedPass": "$2b$10$g88anB1i/31hY1W8wwgKSOYKVzjfZ6czpg/4fC7g.gFOEZxnlDxqm",
+    "photo": "/uploads/1739735071389-623196231.png"
+  },
+  {
+    "id": 1739782033505,
+    "nombre": "biscocho",
+    "apellido": "quemado",
+    "usuario": "bquemas",
+    "email": "bquema@gmail.com",
+    "pass": "MeQuemas*",
+    "hashedPass": "$2b$10$pYPH3ugElEiOcOuIp/oiBOi72QsMbUnOcA.lNRw5h/q0rsskeveN6",
+    "photo": "/uploads/1739782033352-611196674.png"
+  },
+  {
+    "id": 1739784906486,
+    "nombre": "Ailyn",
+    "apellido": "Estevez",
+    "usuario": "nose",
+    "email": "nose@gmail.com",
+    "pass": "Nosehola*",
+    "hashedPass": "$2b$10$tJCYy719z8BNKnUY3FrOrejTRBciYl6ncYo/8CwqWAdBTLbxs..ne",
+    "photo": "/uploads/1739784906300-981504384.png"
+  }
+]

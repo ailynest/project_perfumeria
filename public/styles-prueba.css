@@ -1,0 +1,291 @@
+/* Responsive */
+/* 🌐 1. Pantallas grandes (PCs y laptops, más de 1024px) */
+@media screen and (min-width: 1025px) {
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Lupa junto al input de búsqueda */
+    .search {
+        display: flex;
+        align-items: center;
+        max-width: 300px;
+    }
+
+    .search input {
+        flex: 1;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .user-options {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .menu-toggle {
+        display: none; /* Ocultar botón hamburguesa en PC */
+    }
+
+    /* Mostrar filtros siempre */
+    aside.filtros {
+        display: block;
+        position: relative;
+        width: 250px;
+    }
+
+}
+
+/* 📊 2. Tabletas y móviles (menos de 1024px) */
+@media screen and (max-width: 1024px) {
+    nav{
+        display:block;
+        text-align-last: center;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* 🔍 Hacer que la lupa esté dentro del input */
+    .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        max-width: 280px;
+        position: relative;
+    }
+
+    .search input {
+        flex: 1;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+    .user-options a.user {
+        position: relative;
+        display:none;
+        align-content: center;
+        right: 10px;
+        /*top: 50%;
+        transform: translateY(-50%);*/
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .user-options .user img {
+       width: 30px;
+        height: 30px;
+    }
+
+    /* Íconos debajo */
+    .user-options {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .user-options a:not(.user) img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* 🔹 BOTÓN HAMBURGUESA PARA FILTROS */
+    .menu-toggle {
+        display: block;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        width: 90%;
+        max-width: 300px;
+        font-size: 18px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .menu-toggle:hover {
+        background-color: #FCC419;
+    }
+
+    /* Ocultar filtros inicialmente */
+    aside.filtros {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Mostrar aside cuando se active */
+    aside.filtros.active {
+        left: 0;
+    }
+    .menu-toggle {
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu-toggle:hover {
+        background-color: #FCC419;
+    }
+
+    aside.filtros {
+        margin-top: 200px;
+        width: 50%;
+        max-width: 320px;
+    }
+
+    /* 🔹 Ajustes para permitir scroll en los filtros */
+    aside.filtros {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: auto; /* Permitir espacio suficiente para el contenido */
+        max-height: 70vh;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; /* Permitir scroll */
+    }
+
+    /* Mostrar aside cuando está activo */
+    aside.filtros.active {
+        left: 0;
+    }
+
+    /* 🔹 Fondo semitransparente cuando los filtros están abiertos */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+        z-index: 999;
+    }
+
+    /* Mostrar el fondo cuando los filtros están abiertos */
+    .overlay.active {
+        display: block;
+    }
+}
+
+/* 📲 3. Móviles (375px - 767px) */
+@media screen and (max-width: 767px) {
+    nav{
+        display:block;
+        text-align-last: center;
+    }
+
+    .search {
+        max-width: 260px;
+    }
+
+    .user-options{
+       justify-content: end;
+    }
+    .menu-toggle {
+        width: 50px;
+        height: 50px;
+    }
+
+    aside.filtros {
+        margin-top: 200px;
+        width: 50%;
+        max-width: 320px;
+    }
+
+    /* 🔹 Ajustes para permitir scroll en los filtros */
+    aside.filtros {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: auto; /* Permitir espacio suficiente para el contenido */
+        max-height: 70vh;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; /* Permitir scroll */
+    }
+
+    /* Mostrar aside cuando está activo */
+    aside.filtros.active {
+        left: 0;
+    }
+
+    /* 🔹 Fondo semitransparente cuando los filtros están abiertos */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+        z-index: 999;
+    }
+
+    /* Mostrar el fondo cuando los filtros están abiertos */
+    .overlay.active {
+        display: block;
+    }
+
+    /*body*/
+    div.seccion{
+        /*text-wrap: auto;*/
+        max-width: 100%;        
+    }
+    h2{
+        font-size: 2rem;
+    }
+    .ver-mas-btn{
+        font-size: 0.5rem;
+    }
+
+    .producto img {
+        width:auto;
+        height: 100px;
+        max-width: 160px;
+        overflow: hidden;
+    }
+
+}

@@ -1,0 +1,84 @@
+<!--Ailyn Estevez ☺-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form_inscripcion.css">
+</head>
+<body>
+    <form id="loginForm" class="login" enctype="multipart/form-data" method="POST" action="/upload">
+        <img class="logo" src="https://th.bing.com/th/id/OIP.E6-fcGDeuehNrqgvJ-gFHwHaHa?rs=1&pid=ImgDetMain" alt="logo">
+        <!-- <img class="cute-image" src="" alt="" title=""> -->
+        <h1><strong>Iniciar Sesión</strong></h1> 
+        <div>
+            <div> <!--usuario-->
+                <label for="username">Usuario/Email</label>
+                <br>
+                <input type="text" id="username" name="username" placeholder="Nombre de usuario/Email" required>
+            </div>
+            <br>
+            <div  class="password-container"> <!--pass-->
+                <label for="contraseña">Contaseña</label>
+                <br>
+                <div class="password-field">
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                    <i class="fas fa-eye" id="toggle-password" type="button" onclick="togglePassword('contraseña')"></i>
+                </div>
+            </div>
+        </div> 
+        <br>
+        <button type="submit" id="registrar">Ingresar</button>  
+        <p><strong>¿No tienes cuenta?</strong> <a href="form_inscripcion.html" class="clickable">Regístrate</a></p>
+        <!-- <div id="mensajes-error" style="color: red; font-size: 14px;"></div>
+        <div id="mensaje-exito" style="color: green; font-size: 16px; display: none;"></div>     -->
+    </form>
+   
+    <script>
+        // Manejar login
+        document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+            alert('Login exitoso!');
+            window.location.href = '/';
+            } else {
+            alert(result.error || 'Credenciales inválidas');
+            }
+            
+        } catch (error) {
+            alert('Error de conexión');
+        }
+        });
+
+        //►► Evento para visualizar la contraseña
+        function togglePassword(id) {
+            var passwordField = document.getElementById(id);
+            var icon = document.getElementById('toggle-' + id); // Obtener el ícono del ojo
+            if (passwordField.type === "password") {
+                passwordField.type = "text"; // Muestra la contraseña
+                icon.classList.remove('fa-eye'); // Cambia el ícono
+                icon.classList.add('fa-eye-slash'); // Ícono para ocultar
+            } else {
+                passwordField.type = "password"; // Oculta la contraseña
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+}
+
+
+
+    </script>
+</body>
+</html>

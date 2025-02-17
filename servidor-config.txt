@@ -1,0 +1,95 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+PS C:\Users\alumno.DESKTOP-0J22FIF> Get-ExecutionPolicy
+Restricted
+PS C:\Users\alumno.DESKTOP-0J22FIF> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS C:\Users\alumno.DESKTOP-0J22FIF> Get-ExecutionPolicy
+RemoteSigned
+PS C:\Users\alumno.DESKTOP-0J22FIF>
+
+
+
+
+PS C:\Users\alumno.DESKTOP-0J22FIF\Documents\Proyectos Ailyn> cd '.\32. Web_BOOKs_servidor\'
+PS C:\Users\alumno.DESKTOP-0J22FIF\Documents\Proyectos Ailyn\32. Web_BOOKs_servidor> npm init -y
+
+//EROR: POWERShell Restricted
+//SOLUCION: abrir el Windows PowerShell y ejecutar el código de arriba 
+
+PS C:\Users\alumno.DESKTOP-0J22FIF\Documents\Proyectos Ailyn\32. Web_BOOKs_servidor> npm init -y
+Wrote to C:\Users\alumno.DESKTOP-0J22FIF\Documents\Proyectos Ailyn\32. Web_BOOKs_servidor\package.json:
+
+{
+  "name": "32.-web_books_servidor",
+  "version": "1.0.0",
+  "main": "form_inscripcion.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+PS C:\Users\alumno.DESKTOP-0J22FIF\Documents\Proyectos Ailyn\32. Web_BOOKs_servidor> npm install express
+
+PS C:\Users\alumno.DESKTOP-0J22FIF\Documents\Proyectos Ailyn\32. Web_BOOKs_servidor> npm install cors
+
+// CREAR UN ARCHIVO server.js y copiar dentro []:
+[
+const express = require('express');
+const cors = require('cors');
+
+const fs = require('fs');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use(express.static('public')); //carpeta con los archivo
+
+app.listen(3000, () => console.log('Servidor corriendo en http://localhost:3000'));
+]
+
+PS C:\Users\alumno.DESKTOP-0J22FIF\Documents\Proyectos Ailyn\32. Web_BOOKs_servidor> node server.js
+Servidor corriendo en http://localhost:3000
+
+
+
+//SUBIR IMAGENES AL SERVIDOR
+►creo un archivo .env
+PORT=3000;
+API_KEY=tu_clave_segura;
+
+►instalo paquetes para que actualice la pagina/server sin tener que parar el servidor (ctrl+C)
+npm install dotenv                 // es para que funcione el archivo . env donde estan las API-KEY privadas de mi web
+npm install --save-dev nodemon     //para que corra en modo desarrollador
+                                  //en el package.json se cre esta nueva opcion de desarrollador  "dev": "nodemon server.js"    
+npm run dev                       // ahora para correr el servidor      
+//npm run dev   //para desarrollo
+//npm start     //para producion
+
+►instalo paquetes para el formulario y la subida de imagen del usuario por ejemplo
+npm install body-parser // formulario enctype="multipart/form-data"
+npm install multer     // formulario enctype="multipart/form-data"
+
+//BASE DE DATOS
+npm instal sqlite3 
+//CREARmos un archivo llamado database.js donde escribimos lo siguiente:
+      const sqlite = require ('sqlite3').verbose();
+      const db = new sqlite.Database ('informacion.db');
+
+      db.serialize(() => {
+      db.run (`CREATE TABLE IF NOT EXIST dbusers (
+          id INTEGER UNIQUE PRIMARY KEY AUTOINCREMNET,
+          NOMBRE TEXT NOT NULL,
+          APELLIDO TEXT,
+          USUARIO TEXT NOT NULL,
+          EMAIL TEXT NOT NULL,
+          PHOTO    
+      )`);
+      });
+      //Creamos una tabla con la estructura de datos que queremos
+      module.exports = db;

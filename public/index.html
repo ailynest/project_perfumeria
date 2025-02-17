@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richasoft perfumes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-prueba.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div class="overlay" onclick="cerrarFiltros()"></div>
+    <!-- Encabezado -->
+<header>
+    <nav>
+        <div class="logo">
+            <h1>Richasoft</h1>
+        </div>
+        <div class="menu">
+            <div class="search">
+                <input type="text" placeholder="Buscar ...">
+            </div>
+             <!-- Elementos para usuarios NO autenticados -->
+            <div class="user-options" id="noAuth">
+                <a href="#" class="user"><img class="material-icons" src="images\icon\icons8-search-96-yellow.png" alt="Buscar"></a>
+                <a href="login.html" class="account"><img class="material-icons" src="images\icon\icons8-user-96-yellow.png" alt="account_circle"></a>
+                <a href="#" id="favorito" class="favt" onclick="mostrarFavoritos(event)">
+                    <img class="material-icons" src="images\icon\icons8-favorites-96-yellow.png" alt="favorites_marker">
+                </a>
+                <a href="#" class="cart" onclick="mostrarBolsa(event)">
+                    <img class="material-icons" src="images\icon\icons8-paper-bag-96-yellow.png" alt="paper_bag">
+                    <span id="cart-count">0</span> <!--contador de productos-->
+                </a>
+                <button class="menu-toggle" onclick="toggleFiltros()">☰ </button>
+            </div>
+
+             <!-- Elementos para usuarios autenticados-->
+             <div class="user-options" id="auth">
+                <a href="#" class="user"><img class="material-icons" src="images\icon\icons8-search-96-yellow.png" alt="Buscar"></a>
+                <div class="account"><p>Bienvenido, <span id="username"></span>!</p><button onclick="logout()">Cerrar sesión</button></div>
+                <a href="#" id="favorito" class="favt" onclick="mostrarFavoritos(event)">
+                    <img class="material-icons" src="images\icon\icons8-favorites-96-yellow.png" alt="favorites_marker">
+                </a>
+                <a href="#" class="cart" onclick="mostrarBolsa(event)">
+                    <img class="material-icons" src="images\icon\icons8-paper-bag-96-yellow.png" alt="paper_bag">
+                    <span id="cart-count">0</span>
+                </a>
+                <button class="menu-toggle" onclick="toggleFiltros()">☰ </button>
+            </div> 
+
+            <!-- Contenedor para mostrar los favoritos -->
+            <div id="favt-container" class="hidden">
+                <h2>Tus Favoritos</h2>
+                <ul id="favt-list"></ul>
+                <button class="favt-empty" onclick="vaciarBolsaFavoritos()">Vaciar Favoritos</button>
+            </div>
+            <!-- Contenedor para mostrar los productos -->
+            <div id="cart-container" class="hidden">
+                <h2>Tu Bolsa</h2>
+                <ul id="cart-list"></ul>
+                <button class="cart-empty" onclick="vaciarBolsa()">Vaciar Bolsa</button>
+                <button class="cart-buy" onclick="realizarCompra()">Comprar</button>
+            </div>
+        </div>
+    </nav>
+</header>
+                
+    <main>
+        <section class="productos">
+            <!--BOOKS-->
+            <div class="seccion">
+                <h2>Perfumes detacados</h2> 
+                <button class="ver-mas-btn">Ver Más</button>
+            </div>
+            <div id="container-novedades" class="productos-grid"></div>
+            
+            <div class="seccion">
+                <h2>Regalos para ella</h2>
+                <button class="ver-mas-btn">Ver Más</button>
+            </div>
+            <div id="container-bestsellers" class="productos-grid"></div>
+
+            <div class="seccion">
+                <h2>Regalos para él</h2>
+                <button class="ver-mas-btn">Ver Más</button>
+            </div>
+            <div id="container-recomendaciones" class="productos-grid"></div>
+            <!--REGALOS-->
+            <div class="seccion">
+                <h2>Cosmética para tu piel</h2>
+                <button class="ver-mas-btn">Ver Más</button>
+            </div>
+            <div id="container-regalos-bestsellers" class="productos-grid"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 El Arte de Leer y Regalar - Términos y condiciones | Política de privacidad | Contacto</p>
+    </footer>
+</body>
+</html>

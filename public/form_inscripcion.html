@@ -1,0 +1,86 @@
+<!--Ailyn Estevez ☺-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form_inscripcion.css">
+    <!-- Incluye la librería de Font Awesome (puedes añadirla en la sección <head>) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <form id="formulario" class="registro" enctype="multipart/form-data" method="POST" action="/upload">
+        <img class="logo" src="https://th.bing.com/th/id/OIP.E6-fcGDeuehNrqgvJ-gFHwHaHa?rs=1&pid=ImgDetMain" alt="logo">
+        <h1><strong>Registrate</strong></h1> 
+        <div>
+            <div class="file-input-container"> <!--foto-->
+                <label for="photo">Tu imagen de perfil</label>
+                <span class="tooltip">Debe subir un archivo PNG</span>
+                <br><br>
+                <input type="file" id="photo" name="photo" accept="image/png">
+                <br><br>
+                <img id="preview" src="" alt="Vista previa" style="max-width: 300px; max-height: 300px; display: none;">
+            </div>
+            <div> <!--nombre-->
+                <label for="nombre">Izena/Nombre</label>
+                <br>
+                <input type="text" id="nombre" name="nombre" placeholder="El nombre debe tener entre 2 y 15 caracteres." required>
+            </div>
+            <div> <!--apellido-->
+                <label for="apellido">Abizena/Apellido</label>
+                <br>
+                <input type="text" id="apellido" name="apellido" placeholder="El apellido debe tener entre 2 y 15 caracteres." required>
+            </div>
+            <div> <!--usuario-->
+                <label for="usuario">Ezizena/Usuario</label>
+                <br>
+                <input type="text" id="usuario" name="usuario" placeholder="El usuario debe tener entre 4 y 10 caracteres." required>
+            </div>
+            <div> <!--genero-->
+                <label for="genero">Generoa/Género</label>
+                <br>
+                <select name="genero" id="genero">
+                    <option value="seleccionar" disabled selected>Sekretua/Secreto</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+            </div>
+            <br>
+            <div> <!--fecha de nacimiento-->
+                <label for="fecha">Urtebetetze data/Fecha de nacimiento</label>
+                <br>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+            <br>
+            <div> <!--email-->
+                <label for="email">Email-a/Email</label>
+                <input type="text" id="email" name="email" placeholder="Ejemplo: user@gmail.com" pattern="^\d{8}[A-Za-z]$/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+            </div>
+            <div  class="password-container"> <!--pass-->
+                <label for="contraseña">Pasahitza/Contraseña</label>
+                <br>
+                <div class="password-field">
+                    <input type="password" id="contraseña" name="contraseña" placeholder="La contraseña debe tener entre 6 y 10 caracteres." required>
+                    <i class="fas fa-eye" id="toggle-password" type="button" onclick="togglePassword('contraseña')"></i>
+                </div>
+            </div>
+            <div  class="password-container"> <!--pass-->
+                <label for="confirmarcontraseña">Errepikatu pasahitza/Repite la contraseña</label>
+                <br>
+                <div class="password-field">
+                    <input type="password" id="confirmarcontraseña" name="confirmarcontraseña" placeholder="La contraseña debe tener entre 6 y 10 caracteres." required>
+                    <i class="fas fa-eye" id="toggle-confirm-password" type="button" onclick="togglePassword('confirmarcontraseña')"></i>
+                </div>
+            </div>
+        </div> 
+        <br>
+        <button id="registrar">Registrarse</button>  
+        <p><strong>¿Ya tienes cuenta?</strong> <a href="login.html" class="clickable">Inicia Sesión</a></p>
+        <div id="mensajes-error" style="color: red; font-size: 14px;"></div>
+        <div id="mensaje-exito" style="color: green; font-size: 16px; display: none;"></div>    
+    </form>
+   
+    <script src="form_inscripcion.js"></script>
+</body>
+</html>

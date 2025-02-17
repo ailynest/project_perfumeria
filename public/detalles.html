@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richasoft perfumes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="detalles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;"><h1>Richasoft</h1></a>
+            </div>
+            <div class="menu">
+                <div class="search">
+                    <input type="text" placeholder="Buscar ...">
+                </div>
+                 <!-- Elementos para usuarios NO autenticados -->
+                <div class="user-options" id="noAuth">
+                    <a href="#" class="user"><img class="material-icons" src="images\icon\icons8-search-96-yellow.png" alt="Buscar"></a>
+                    <a href="login.html" class="account"><img class="material-icons" src="images\icon\icons8-user-96-yellow.png" alt="account_circle"></a>
+                    <a href="#" id="favorito" class="favt" onclick="mostrarFavoritos(event)">
+                        <img class="material-icons" src="images\icon\icons8-favorites-96-yellow.png" alt="favorites_marker">
+                    </a>
+                    <a href="#" class="cart" onclick="mostrarBolsa(event)">
+                        <img class="material-icons" src="images\icon\icons8-paper-bag-96-yellow.png" alt="paper_bag">
+                        <span id="cart-count">0</span> <!--contador de productos-->
+                    </a>
+                    <!-- <button class="menu-toggle" onclick="toggleFiltros()">☰ </button> -->
+                </div>
+    
+                 <!-- Elementos para usuarios autenticados-->
+                 <div class="user-options" id="auth">
+                    <a href="#" class="user"><img class="material-icons" src="images\icon\icons8-search-96-yellow.png" alt="Buscar"></a>
+                    <div class="account"><p>Bienvenido, <span id="username"></span>!</p><button onclick="logout()">Cerrar sesión</button></div>
+                    <a href="#" id="favorito" class="favt" onclick="mostrarFavoritos(event)">
+                        <img class="material-icons" src="images\icon\icons8-favorites-96-yellow.png" alt="favorites_marker">
+                    </a>
+                    <a href="#" class="cart" onclick="mostrarBolsa(event)">
+                        <img class="material-icons" src="images\icon\icons8-paper-bag-96-yellow.png" alt="paper_bag">
+                        <span id="cart-count">0</span>
+                    </a>
+                    <button class="menu-toggle" onclick="toggleFiltros()">☰ </button>
+                </div> 
+    
+                <!-- Contenedor para mostrar los favoritos -->
+                <div id="favt-container" class="hidden">
+                    <h2>Tus Favoritos</h2>
+                    <ul id="favt-list"></ul>
+                    <button class="favt-empty" onclick="vaciarBolsaFavoritos()">Vaciar Favoritos</button>
+                </div>
+                <!-- Contenedor para mostrar los productos -->
+                <div id="cart-container" class="hidden">
+                    <h2>Tu Bolsa</h2>
+                    <ul id="cart-list"></ul>
+                    <button class="cart-empty" onclick="vaciarBolsa()">Vaciar Bolsa</button>
+                    <button class="cart-buy" onclick="realizarCompra()">Comprar</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Detalles del Perfume -->
+        <section id="producto-detalle">
+            <!-- Aquí se insertará el contenido dinámico del perfume-->
+        </section>
+
+        <!-- Sección de Valoraciones ⭐⭐⭐⭐⭐🌟-->
+        <section class="reviews-section">
+            <h2>Valoraciones de Clientes</h2> 
+            <ul id="lista-reviews"></ul>
+            <br>
+            <h3>Deja tu Reseña</h3>
+            <form id="form-review">
+                <label> </label>
+                <div class="star-rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="review-rating" required> <!-- Guardamos el valor -->
+
+                <input type="text" id="review-title" placeholder="Título de la reseña (máx 100 caracteres)" maxlength="100" required>
+                <textarea id="review-comment" placeholder="Escribe tu reseña (máx 5000 caracteres)" maxlength="5000" required></textarea>
+
+                <label>📷 Subir una imagen (opcional):</label>
+                <input type="file" id="review-image" accept="image/*">
+
+                <input type="text" id="review-name" placeholder="Tu nombre público" required>
+                <input type="email" id="review-email" placeholder="Tu correo electrónico" required>
+
+                <div class="review-buttons">
+                    <button type="submit">Enviar Reseña</button>
+                    <button type="button" id="cancel-review">Cancelar</button>
+                </div>
+            </form>
+            
+                <!-- 📌 Sección de Reseñas -->
+                <h2> Opiniones de Clientes</h2>
+                <div class="review-carousel-container">
+                    <button id="prev-review">←</button>
+            
+                    <div class="review-carousel">
+                        <div class="review-items">
+                            <div class="review-item">
+                                <strong>Alicia Pérez</strong> - ⭐⭐⭐⭐⭐
+                                <p><strong>Excelente!!!</strong></p>
+                                <p>Me encanta. Lo recomiendo totalmente.</p>
+                                <img src="https://cdn2.primor.eu/media/catalog/product/cache/8d3aba296f7a18b5251ee30fa5db42b2/3/0/30F00039_8_fe81.jpg" alt="Imagen de la reseña">
+                            </div>
+                            <div class="review-item">
+                                <strong>María López</strong> - ⭐⭐⭐⭐☆
+                                <p><strong>Muy bueno, dura todo el día</strong></p>
+                                <p>El precio es muy bueno para la calidad del perfume.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="next-review">→</button>
+                </div>         
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 El Arte de Leer y Regalar - Términos y condiciones | Política de privacidad | Contacto</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="detalles.js"></script>
+</body>
+</html>
